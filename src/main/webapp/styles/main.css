@@ -1,0 +1,219 @@
+/*
+palette link:
+https://coolors.co/palette/0d1321-1d2d44-3e5c76-748cab-f0ebd8
+*/
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&family=Stalinist+One&family=Train+One&display=swap');
+
+:root {
+    /* color --------------------*/
+    --background-color: #0d1321;
+    --mid-color-1: #1d2d44;
+    --mid-color-2: #3e5c76;
+    --foreground-color: #748cab;
+    --top-color: #f0ebd8;
+
+    /* fonts---------------------*/
+    --font-train-one: "Train One";
+    --font-oxanium: "Oxanium";
+    --font-stalinist: "Stalinist One";
+
+    /* images--------------------*/
+    --background-image-rail: url("../images/railway-wallpaper.jpg")
+}
+
+body {
+    background-color: var(--top-color);
+}
+
+h1 {
+    color: var(--background-color);
+    font-size: 3rem;
+    font-family: var(--font-stalinist), monospace;
+}
+
+.toggle > li{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:10px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    font-size: 1.3rem;
+    font-family: var(--font-oxanium), monospace;
+}
+
+i {
+    font-size: 20px;
+}
+
+.navbar-container {
+    background-color: var(--foreground-color);
+}
+
+.search-container-outer-image {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.search-container-outer-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--background-image-rail);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7) contrast(1.2);
+    z-index: -1;
+}
+
+.search-container {
+    height: 250px;
+    width: 30%;
+    padding: 40px;
+    border-radius: 5px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    /*background-color: var(--foreground-color);*/
+    background: transparent;
+    backdrop-filter: blur(5px);
+    --webkit-backdrop-filter: blur(5px);
+    box-shadow: var(--mid-color-2) 5px 5px 10px;
+    border: 2px solid white;
+}
+
+.search-container > div > label {
+    color: white;
+    font-family: var(--font-oxanium), monospace;
+    font-size: 1.2rem;
+}
+
+.search-container > div > select, input {
+    position: absolute;
+    right: 10%;
+    height: 40px;
+    width: 50%;
+}
+
+.search-container > button {
+    color: white;
+    font-family: var(--font-oxanium), monospace;
+    width: 80%;
+    font-size: 1.3rem;
+    background-color: var(--mid-color-1);
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 4px;
+    align-items: center;
+    margin-left: 10%;
+    box-shadow: black 3px 3px 4px;
+}
+
+.search-result-container{
+}
+
+.search-results {
+    height: 600px;
+    overflow: scroll;
+}
+
+.search-results > li {
+    color: white;
+    background-color: var(--foreground-color);
+    font-family: var(--font-oxanium), monospace;
+    font-size: 1.3rem;
+    padding: 3px 30px 3px 30px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid gray;
+}
+.index-for-train-list {
+    color: black;
+    font-family: var(--font-oxanium), monospace;
+    font-size: 1.3rem;
+    padding: 3px 40px 3px 30px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+.index-for-train-list > li > p {
+    margin:10px;
+}
+
+.search-results > li > p {
+    margin: 5px 15px;
+}
+
+.list-train > li > p {
+    margin:10px;
+}
+
+.train-name {
+    color: var(--background-color);
+}
+.train-seat {
+    color: var(--background-color);
+}
+
+.train-fare {
+    color: orange;
+    background-color: var(--mid-color-2);
+    border-radius: 3px;
+    padding: 2px 20px;
+    border: 1px solid white;
+}
+
+
+/*
+    hover conditions on nav items, and buttons
+*/
+@keyframes item-scale {
+    0% {
+        transform: scale(100%);
+    }
+    100% {
+        transform: scale(110%);
+    }
+}
+
+.toggle > li:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--mid-color-2);
+    border-radius: 5px;
+    border: 1px solid var(--mid-color-1);
+    animation: item-scale 0.2s linear;
+    transform: scale(110%);
+}
+
+/* use when any nav li element is active */
+.nav-active {
+    cursor: pointer;
+    color: white;
+    background-color: var(--mid-color-2);
+    border-radius: 5px;
+    border: 1px solid var(--mid-color-1);
+    animation: item-scale 0.2s linear;
+    transform: scale(110%);
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.search-container > button:active {
+    cursor: pointer;
+    background-color: var(--mid-color-2);
+    transform: translate(4px, 4px);
+    box-shadow: black 1px 1px 1px;
+}
